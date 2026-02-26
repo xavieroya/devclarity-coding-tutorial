@@ -1,39 +1,77 @@
----
-agent: 'agent'
-description: 'Begins implementing a task following an implementation plan.'
----
-# Step-by-Step Implementation Process
+Use this template to turn a user story into a concrete plan, skeletons, and tests.
 
-This rule guides the implementation of tasks in a methodical, step-by-step approach with user verification at each stage.
+## INPUTS
 
-## Process Overview
+- PROJECT_CONTEXT
+- USER_STORY
+- (optional) NON_FUNCTIONAL_REQS
+- (optional) ACCEPTANCE_CRITERIA
 
-1. **Create Implementation Plan**: First, create a {task-name-}steps.md file that breaks down the task into clear, manageable steps.
+## INSTRUCTIONS
 
-2. **One Step at a Time**: Implement only one step at a time, focusing on quality and completeness for each individual component.
+1. Extract goals, actors, and constraints from USER_STORY.
+2. Make explicit assumptions and edge cases.
+3. Produce a step-by-step plan across affected layers:
+   - Frontend (web/mobile applications)
+   - APIs (backend services)
+   - Integrations (messaging, external services)
+   - Data (databases, data warehouses, ETL)
+   - Authentication/authorization systems
+4. Provide key code skeletons and interface contracts.
+5. Define tests to add (unit, integration, e2e).
+6. Include rollout, feature flag, and observability plan.
+7. Keep lines ≤80 chars.
 
-3. **User Verification**: After completing each step, check with the user to ensure it was implemented correctly before proceeding.
+## OUTPUT FORMAT
 
-4. **Iterative Refinement**: Based on user feedback, refine the implementation as needed before moving to the next step.
+### Story summary
 
-5. **Documentation**: Keep the steps.md file updated with progress, changes, and completion status.
+- **Goal:**
+- **Users:**
+- **Success criteria:**
 
-## Implementation Guidelines
+### Assumptions & constraints
 
-- Begin by analyzing the full task requirements
-- Create logical, sequential steps that build upon each other
-- Estimate complexity and time for each step
-- Include testing/verification criteria for each step
-- Document dependencies between steps
-- Highlight potential challenges or decision points
+- ...
 
-## User Interaction
+### Step-by-step plan
 
-When checking with the user after each step:
-- Summarize what was implemented
-- Explain how it fulfills the requirements
-- Ask specific questions about the implementation
-- Provide options for adjustments if needed
-- Get explicit approval before proceeding to the next step
+1. ...
+2. ...
 
-This approach ensures high-quality implementation with continuous user alignment throughout the development process.
+### Architecture impact
+
+- **Modules/services:**
+- **Events/messaging:**
+- **Schemas/migrations:**
+
+### API & model contracts (sketch)
+
+### Key code skeletons
+
+- **Components/services:**
+- **Workers/consumers:**
+- **Repositories/queries:**
+
+### Tests to add
+
+- **Unit:**
+- **Integration:**
+- **e2e:**
+- **Property/fuzz:**
+- **Load:**
+
+### Rollout & safety
+
+- **Feature flag:**
+- **Backward compatibility:**
+- **Metrics/logs/traces:**
+- **Runbook:**
+
+### Risks & mitigations
+
+- ...
+
+### Definition of done
+
+- ...

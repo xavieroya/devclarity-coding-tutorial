@@ -1,34 +1,64 @@
----
-agent: 'edit'
-description: 'Creates an implementation plan markdown file from a task description.'
----
-# Task Creator
+Use this template to break a feature spec into sprint-ready engineering tasks.
 
-When a new task or feature is specified, create a markdown file named `{task-name}.md` in the root directory that contains:
+## INPUTS
 
-## Structure of Task Files
+- PROJECT_CONTEXT
+- FEATURE_SPEC
 
-1. **Task Description**
-   - Clear description of what needs to be accomplished
-   - Business context and requirements
-   - Any constraints or limitations
+## INSTRUCTIONS
 
-2. **Development Tasks**
-   - Numbered list of specific development steps to complete
-   - Files that need to be created or modified
-   - Database changes required
-   - Testing requirements
-   - Any dependencies on other tasks
+1. Parse FEATURE_SPEC into vertical slices deliverable per sprint.
+2. For each task, define acceptance criteria and effort (S/M/L or hours).
+3. Capture dependencies (code, teams, data, compliance).
+4. Include testing, docs, and observability per task.
+5. Identify cross-cutting NFRs (perf, security, accessibility).
+6. Keep lines ≤80 chars.
 
-3. **Acceptance Criteria**
-   - List of criteria that must be met for the task to be considered complete
-   - Expected behavior
-   - Edge cases to handle
+## OUTPUT FORMAT
 
-4. **Technical Considerations**
-   - Potential challenges
-   - Performance considerations
-   - Security concerns
-   - Best practices to follow
+### Work breakdown
 
-The task file should be detailed enough for a developer to understand what needs to be done and how to implement it correctly following the project's conventions and best practices. Include sufficient context from existing code patterns when relevant.
+| ID | Title | Owner | Effort | Depends on |
+|----|-------|-------|--------|------------|
+| T1 | ...   |       | M      | T0         |
+
+### Tasks
+
+**T1:**
+- **Description:**
+- **Acceptance criteria:**
+- **Effort:**
+- **Dependencies:**
+- **Risk:**
+- **Test plan:**
+- **Observability:**
+- **Docs:**
+
+**T2:**
+- ...
+
+### Milestones
+
+- **M1:** Prototype
+- **M2:** Beta/feature-flagged
+- **M3:** GA
+
+### NFRs
+
+- **Performance:**
+- **Security/compliance:**
+- **Accessibility:**
+- **Internationalization:**
+- **Reliability/SLOs:**
+
+### Analytics & success metrics
+
+- **KPIs/dashboards:**
+
+### Definition of done (global)
+
+- Code reviewed, linted, and formatted
+- Tests written, passing, and stable
+- Feature flagged and togglable
+- Metrics/logs/traces in place
+- Docs updated (README/ADR/changelog)
